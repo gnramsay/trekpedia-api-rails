@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Define the Application Controller
 class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :missing_record
 

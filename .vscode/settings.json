@@ -17,18 +17,18 @@
   "ruby.useBundler": true,
   "ruby.useLanguageServer": true,
 
-  // "rubyTestExplorer.testFramework": "rspec",
+  "rubyTestExplorer.testFramework": "none",
   // "rubyTestExplorer.minitestDirectory": "./spec/",
   // "rubyTestExplorer.logpanel": true,
-  // "rubyTestExplorer.rspecCommand": "spring rspec"
+  "rubyTestExplorer.rspecCommand": "spring rspec",
   "emmet.includeLanguages": {
     "erb": "html"
   },
   "rewrap.autoWrap.enabled": false,
   "editor.folding": true,
   "rubyTestExplorer.minitestDirectory": "./spec/",
-  "rubyTestExplorer.testFramework": "rspec",
   "testExplorer.addToEditorContextMenu": true,
   // "ruby.rubocop.executePath": "./bin/",
-  "ruby.specCommand": "spring rspec"
+  "ruby.specCommand": "spring rspec",
+  "testExplorer.hideWhen": "never"
 }

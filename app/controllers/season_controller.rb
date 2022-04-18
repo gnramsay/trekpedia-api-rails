@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Define the Season Controller
 class SeasonController < ApplicationController
   def index
     series = Season.all

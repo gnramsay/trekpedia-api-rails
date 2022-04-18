@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Define the migration for the Season Model
 class CreateSeasons < ActiveRecord::Migration[6.1]
   def change
     create_table :seasons do |t|

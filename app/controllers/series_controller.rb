@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Define the Series Controller
 class SeriesController < ApplicationController
   def index
     series = Series.all

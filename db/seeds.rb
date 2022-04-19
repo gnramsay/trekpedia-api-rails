@@ -4,6 +4,7 @@
 # values to 1.
 # Then repopulate using the data from the Trekpedia JSON files.
 
+require 'colorize'
 def create_series(series)
   Series.create(
     name: series['name'],
@@ -25,11 +26,11 @@ def create_season(series, season_num, season_data)
   )
 end
 
-puts "\nPopulating Trekpedia data base from local JSON files\n"
+puts "\nPopulating Trekpedia data base from local JSON files".light_blue
 
 series_list = JSON.parse(File.read(Rails.root.join('trekdata', 'output', 'star_trek_series_info.json')))
 
-puts "\nClearing out existing data from the database."
+puts "\nClearing out existing data from the database.".red
 Season.destroy_all
 Series.destroy_all
 
@@ -43,7 +44,7 @@ Series.destroy_all
      next)
   end
   ai_val = result.any? ? result.first['id'].to_i + 1 : 1
-  puts "Resetting auto increment ID for #{table} to #{ai_val}"
+  puts "  -> Resetting auto increment ID for #{table} to #{ai_val}".light_red
   ActiveRecord::Base.connection.execute("ALTER SEQUENCE #{table}_id_seq RESTART WITH #{ai_val}")
 end
 
@@ -54,19 +55,19 @@ series_list.each do |series|
   new_series = create_series(series)
 
   series_id = new_series['id']
-  puts "Added series '#{new_series.name}' (id: #{series_id})"
+  puts "Added series '#{new_series.name}' (id: #{series_id})".light_green
   series_name = new_series.name.downcase.parameterize(separator: '_')
   series_datafile = "star_trek_series_#{series_number}_#{series_name}_episodes.json"
-  puts "  -> Reading Seasons data from '#{series_datafile}'"
+  puts "  -> Reading Seasons data from '#{series_datafile}'".light_blue
 
   begin
     series_data = JSON.parse(File.read(Rails.root.join('trekdata', 'output', series_datafile)))
   rescue Errno::ENOENT
-    puts '     ❌ File not found, ignoring.'
+    puts '     ❌ File not found, ignoring.'.red
   else
     series_data['seasons'].each do |num, data|
       _new_season = create_season(new_series, num, data)
-      puts "     ✔ Added Season #{num}"
+      puts "     ✔ Added Season #{num}".green
     end
   end
 end

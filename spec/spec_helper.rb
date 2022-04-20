@@ -3,6 +3,7 @@
 require 'simplecov'
 SimpleCov.start 'rails' do
   enable_coverage :branch
+  add_filter ['/channels/', '/jobs/', '/mailers/']
 end
 
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration

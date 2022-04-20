@@ -11,6 +11,7 @@ AllCops:
   Exclude:
     - bin/**/*
     - vendor/**/*
+    - db/schema.rb
 
 Metrics/BlockLength:
   Enabled: true

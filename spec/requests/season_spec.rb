@@ -50,5 +50,11 @@ RSpec.describe 'Seasons', type: :request do
       expected = JSON.parse(response.body).deep_symbolize_keys
       expect(expected).to include(json_result)
     end
+
+    context 'when record not found' do
+      subject { get '/season/99' }
+
+      it_behaves_like 'record_not_found'
+    end
   end
 end

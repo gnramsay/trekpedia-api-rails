@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Define the migration for the Episode Model
 class CreateEpisodes < ActiveRecord::Migration[6.1]
   def change
     create_table :episodes do |t|

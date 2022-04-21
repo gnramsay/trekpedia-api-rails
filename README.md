@@ -1,5 +1,7 @@
 # Trekpedia API (Rails Version)
 
+![ci status](https://github.com/gnramsay/trekpedia-api-rails/actions/workflows/rubyonrails.yml/badge.svg)
+
 This is a WIP API to serve the [Trekpedia][trekpedia] data.
 
 Full documentation incoming once the basic functionality is complete.

@@ -2,29 +2,38 @@
 
 This is a WIP API to serve the [Trekpedia][trekpedia] data.
 
-Documentation incoming once the basic functionality is complete.
+Full documentation incoming once the basic functionality is complete.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby and Rails versions
 
-Things you may want to cover:
+This API is being developed using Ruby `2.7.6` and Rails `6.1.5` which were the
+latest releases of their Major verisons at develpoment time.
 
-* Ruby version
+Ruby 3 is out but I don't currently test against this version, it may work but
+YMMV. I **do** intend to add version 3 to the CI tests though.
 
-* System dependencies
+I have no plans to migrate to Rails 7 at this time
 
-* Configuration
+## System dependencies
 
-* Database creation
+Standard requirements for a Ruby install and a Rails application. Develpment is
+carried out on an Ubuntu 20.04 box, using `rbenv` to version-control my Rubies.
 
-* Database initialization
+## Setup
 
-* How to run the test suite
+Clone the application as below. The repo contains the Trekdata as a sub-module
+so needs the extra flag :
 
-* Services (job queues, cache servers, search engines, etc.)
+`git clone --recurse-submodules https://github.com/gnramsay/trekpedia-api-rails.git`
 
-* Deployment instructions
+## Database creation and initialization
 
-* ...
+Run `rails db:setup` to create the database, load schema and the Trekpedia data in one action.
+
+## How to run the test suite
+
+Run `rspec` from the project root. Test coverage is currently 100%
+
+## Deployment instructions
 
 [trekpedia]: https://github.com/gnramsay/trekpedia

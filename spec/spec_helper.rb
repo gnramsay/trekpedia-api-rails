@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 require 'simplecov'
+require 'coveralls'
+
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+
 SimpleCov.start 'rails' do
   enable_coverage :branch
   add_filter ['/channels/', '/jobs/', '/mailers/']

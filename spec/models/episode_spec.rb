@@ -20,10 +20,9 @@ RSpec.describe Episode, type: :model do
       expect(episode.errors[:director]).to include("can't be blank")
     end
 
-    it 'requires a link' do
+    it 'requires a link but it can be blank' do
       episode.link = ''
-      expect(episode).not_to be_valid
-      expect(episode.errors[:link]).to include("can't be blank")
+      expect(episode).to be_valid
     end
 
     it 'requires num_overall' do

@@ -1,6 +1,6 @@
 # Trekpedia API (Rails Version)
 
-![ci status](https://github.com/gnramsay/trekpedia-api-rails/actions/workflows/rubyonrails.yml/badge.svg)
+[![ci status](https://github.com/gnramsay/trekpedia-api-rails/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/gnramsay/trekpedia-api-rails/actions)
 [![Coverage Status](https://coveralls.io/repos/github/gnramsay/trekpedia-api-rails/badge.svg?branch=main)](https://coveralls.io/github/gnramsay/trekpedia-api-rails?branch=main)
 
 This is a WIP API to serve the [Trekpedia][trekpedia] data.

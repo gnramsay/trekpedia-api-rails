@@ -2,10 +2,10 @@
 
 RSpec.describe 'Routes /seasons' do
   it 'routes to seasons#index' do
-    expect(get('/seasons')).to route_to('seasons#index')
+    expect(get('/api/v1/seasons')).to route_to('api/v1/seasons#index')
   end
 
   it 'routes to seasons#show' do
-    expect(get('/seasons/1')).to route_to('seasons#show', id: '1')
+    expect(get('/api/v1/seasons/1')).to route_to('api/v1/seasons#show', id: '1')
   end
 end

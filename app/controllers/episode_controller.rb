@@ -3,8 +3,8 @@
 # Define the Espiode Controller
 class EpisodeController < ApplicationController
   def index
-    episode = Episode.all
-    render json: episode
+    episodes = Episode.all
+    render json: episodes
   end
 
   def show

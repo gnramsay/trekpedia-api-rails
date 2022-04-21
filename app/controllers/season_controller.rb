@@ -3,12 +3,12 @@
 # Define the Season Controller
 class SeasonController < ApplicationController
   def index
-    series = Season.all
-    render json: series
+    seasons = Season.all
+    render json: seasons
   end
 
   def show
-    series = Season.find(params[:id])
-    render json: series
+    season = Season.find(params[:id])
+    render json: season
   end
 end

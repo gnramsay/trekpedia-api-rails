@@ -1,6 +1,6 @@
 # This workflow will install a prebuilt Ruby version, install dependencies, and
 # run tests and linters.
-name: "CI Tests, Linting"
+name: "CI"
 on:
   [push, pull_request]
   #push:
@@ -41,6 +41,7 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: "./coverage/lcov/lcov.info"
 
   lint:
     runs-on: ubuntu-latest

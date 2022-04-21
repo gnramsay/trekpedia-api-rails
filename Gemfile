@@ -53,8 +53,8 @@ gem 'solargraph', '~> 0.44.3', groups: %i[development test]
 
 gem 'spring-commands-rspec', group: :development
 
-gem 'coveralls_reborn', group: :test
 gem 'simplecov', '~> 0.21.2', group: :test
+gem 'simplecov-lcov', group: :test
 
 gem 'brakeman', '~> 5.2', groups: %i[development test]
 gem 'bundle-audit', '~> 0.1.0', group: %i[development test]

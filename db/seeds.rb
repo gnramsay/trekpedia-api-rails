@@ -5,15 +5,9 @@
 # Then repopulate using the data from the Trekpedia JSON files.
 
 require 'colorize'
-def create_series(series)
+def create_series(series_data)
   Series.create(
-    name: series['name'],
-    url: series['url'],
-    season_count: series['season_count'],
-    episode_count: series['episode_count'],
-    episodes_url: series['episodes_url'],
-    dates: series['dates'],
-    logo: series['logo']
+    **series_data
   )
 end
 
@@ -26,9 +20,18 @@ def create_season(series, season_num, season_data)
   )
 end
 
+def create_episode(season, episode_data)
+  new_episode = season.episode.create(**episode_data)
+  if new_episode.valid?
+    puts '       ✔ episode '.green + episode_data['title'].light_green + ' created'.green
+  else
+    puts '       ❌ episode '.red + episode_data['title'].to_s.light_red + ' creation failed!'.red
+  end
+end
+
 def reset_sequences
   # ActiveRecord::Base.connection.tables.each do |table|
-  %w[seasons series].each do |table|
+  %w[episodes seasons series].each do |table|
     result = begin
       ActiveRecord::Base.connection.execute("SELECT id FROM #{table} ORDER BY id DESC LIMIT 1")
     rescue StandardError
@@ -47,9 +50,7 @@ puts "\nPopulating Trekpedia data base from local JSON files".light_blue
 series_list = JSON.parse(File.read(Rails.root.join('trekdata', 'output', 'star_trek_series_info.json')))
 
 puts "\nClearing out existing data from the database.".red
-Season.destroy_all
 Series.destroy_all
-
 reset_sequences
 
 puts "\n"
@@ -70,8 +71,11 @@ series_list.each do |series|
     puts '     ❌ File not found, ignoring.'.red
   else
     series_data['seasons'].each do |num, data|
-      _new_season = create_season(new_series, num, data)
-      puts "     ✔ Added Season #{num}".green
+      new_season = create_season(new_series, num, data)
+      puts "     ✔ Added Season #{num}".light_green
+      data['episodes'].each do |episode|
+        _new_episode = create_episode(new_season, episode)
+      end
     end
   end
 end

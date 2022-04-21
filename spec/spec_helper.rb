@@ -11,7 +11,7 @@ end
 SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
   [
     SimpleCov::Formatter::HTMLFormatter,
-    SimpleCov::Formatter::LcovFormatter,
+    SimpleCov::Formatter::LcovFormatter
   ]
 )
 

@@ -14,8 +14,8 @@ end
 def create_season(series, season_num, season_data)
   series.seasons.create(
     season_number: season_num,
-    season_start: season_data['start'],
-    season_end: season_data['end'],
+    season_start: season_data['season_start'],
+    season_end: season_data['season_end'],
     total: season_data['total']
   )
 end

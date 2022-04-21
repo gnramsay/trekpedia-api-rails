@@ -16,21 +16,21 @@ RSpec.describe 'Episode', type: :request do
 
   describe 'GET #index' do
     it 'returns a success response' do
-      get '/episodes'
+      get '/api/v1/episodes'
       expect(response).to have_http_status(:ok)
     end
 
     it 'returns correct number of Episodes' do
       episode
       create :episode
-      get '/episodes'
+      get '/api/v1/episodes'
       json = JSON.parse(response.body)
       expect(json.length).to eq 2
     end
 
     it 'returns correct JSON data' do
       episode
-      get '/episodes'
+      get '/api/v1/episodes'
       expected = JSON.parse(response.body).first.deep_symbolize_keys
       expect(expected).to include(json_result)
     end
@@ -39,19 +39,19 @@ RSpec.describe 'Episode', type: :request do
   describe 'Get #show' do
     it 'returns a success response' do
       episode
-      get "/episodes/#{episode.id}"
+      get "/api/v1/episodes/#{episode.id}"
       expect(response).to have_http_status(:ok)
     end
 
     it 'returns correct JSON data' do
       episode
-      get "/episodes/#{episode.id}"
+      get "/api/v1/episodes/#{episode.id}"
       expected = JSON.parse(response.body).deep_symbolize_keys
       expect(expected).to include(json_result)
     end
 
     context 'when record not found' do
-      subject { get '/episodes/99' }
+      subject { get '/api/v1/episodes/99' }
 
       it_behaves_like 'record_not_found'
     end

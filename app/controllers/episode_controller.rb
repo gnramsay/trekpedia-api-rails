@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Define the Espiode Controller
 class EpisodeController < ApplicationController
   def index
     episode = Episode.all

@@ -24,14 +24,13 @@ RSpec.describe 'Series', type: :request do
       series
       create :series
       get '/api/v1/series'
-      json = JSON.parse(response.body)
       expect(json.length).to eq 2
     end
 
     it 'returns correct JSON data' do
       series
       get '/api/v1/series'
-      expected = JSON.parse(response.body).first.deep_symbolize_keys
+      expected = json.first.deep_symbolize_keys
       expect(expected).to include(json_result)
     end
   end
@@ -46,7 +45,7 @@ RSpec.describe 'Series', type: :request do
     it 'returns correct JSON data' do
       series
       get "/api/v1/series/#{series.id}"
-      expected = JSON.parse(response.body).deep_symbolize_keys
+      expected = json.deep_symbolize_keys
       expect(expected).to include(json_result)
     end
 

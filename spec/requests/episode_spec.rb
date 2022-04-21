@@ -24,14 +24,13 @@ RSpec.describe 'Episode', type: :request do
       episode
       create :episode
       get '/api/v1/episodes'
-      json = JSON.parse(response.body)
       expect(json.length).to eq 2
     end
 
     it 'returns correct JSON data' do
       episode
       get '/api/v1/episodes'
-      expected = JSON.parse(response.body).first.deep_symbolize_keys
+      expected = json.first.deep_symbolize_keys
       expect(expected).to include(json_result)
     end
   end
@@ -46,7 +45,7 @@ RSpec.describe 'Episode', type: :request do
     it 'returns correct JSON data' do
       episode
       get "/api/v1/episodes/#{episode.id}"
-      expected = JSON.parse(response.body).deep_symbolize_keys
+      expected = json.deep_symbolize_keys
       expect(expected).to include(json_result)
     end
 

@@ -2,7 +2,7 @@
 
 class Season < ApplicationRecord
   belongs_to :series
-  has_many :episode
+  has_many :episode, dependent: :destroy
 
   validates :total, presence: true
   validates :season_start, presence: true

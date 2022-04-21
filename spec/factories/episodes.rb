@@ -2,12 +2,12 @@
 
 FactoryBot.define do
   factory :episode do
-    num_overall { 'MyString' }
-    num_in_season { 'MyString' }
-    title { 'MyString' }
-    link { 'MyString' }
+    sequence(:num_overall) { |n| n.to_s }
+    sequence(:num_in_season) { |n| n.to_s }
+    sequence(:title) { |n| "Episode #{n}" }
+    link { 'https://en.wikipedia.org/wiki/Episode_#{n}' }
     director { 'MyString' }
-    air_date { 'MyString' }
-    season { nil }
+    air_date { 'April 1, 2022' }
+    association :season
   end
 end

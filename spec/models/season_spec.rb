@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
 RSpec.describe Season, type: :model do
   describe '#validations' do
     let(:season) { build :season }

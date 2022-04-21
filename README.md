@@ -3,7 +3,14 @@
 [![ci status](https://github.com/gnramsay/trekpedia-api-rails/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/gnramsay/trekpedia-api-rails/actions)
 [![Coverage Status](https://coveralls.io/repos/github/gnramsay/trekpedia-api-rails/badge.svg?branch=main)](https://coveralls.io/github/gnramsay/trekpedia-api-rails?branch=main)
 
-This is a WIP API to serve the [Trekpedia][trekpedia] data.
+This is a WIP API to serve my [Trekpedia][trekpedia] data.
+
+The primary goal is however to get myself familiar again with Ruby/Rails after a
+long gap (I primarily code in Python/Django/React these days), Improve my
+testing methodology and learn `GitHub Actions`.
+
+As the base Trekpedia data is improved and updated, I will likewise update this
+API.
 
 Full documentation incoming once the basic functionality is complete.
 

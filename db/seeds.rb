@@ -12,7 +12,7 @@ def create_series(series_data)
 end
 
 def create_season(series, season_num, season_data)
-  series.season.create(
+  series.seasons.create(
     season_number: season_num,
     season_start: season_data['start'],
     season_end: season_data['end'],
@@ -21,7 +21,7 @@ def create_season(series, season_num, season_data)
 end
 
 def create_episode(season, episode_data)
-  new_episode = season.episode.create(**episode_data)
+  new_episode = season.episodes.create(**episode_data)
   if new_episode.valid?
     puts '       ✔ episode '.green + episode_data['title'].light_green + ' created'.green
   else

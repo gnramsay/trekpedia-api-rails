@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe 'Routes /episode' do
-  it 'routes to episode#index' do
-    expect(get('/episode')).to route_to('episode#index')
+RSpec.describe 'Routes /episodes' do
+  it 'routes to episodes#index' do
+    expect(get('/episodes')).to route_to('episodes#index')
   end
 
-  it 'routes to episode#show' do
-    expect(get('/episode/1')).to route_to('episode#show', id: '1')
+  it 'routes to episodes#show' do
+    expect(get('/episodes/1')).to route_to('episodes#show', id: '1')
   end
 end

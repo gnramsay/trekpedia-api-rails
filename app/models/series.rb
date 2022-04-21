@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Series < ApplicationRecord
-  has_many :season, dependent: :destroy
+  has_many :seasons, dependent: :destroy
 
   validates :name, :url, :episodes_url, :season_count, :episode_count, :dates, presence: true
 

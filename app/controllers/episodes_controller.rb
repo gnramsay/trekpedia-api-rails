@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Define the Espiode Controller
-class EpisodeController < ApplicationController
+class EpisodesController < ApplicationController
   def index
     episodes = Episode.all
     render json: episodes

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Define the Season Controller
-class SeasonController < ApplicationController
+class SeasonsController < ApplicationController
   def index
     seasons = Season.all
     render json: seasons

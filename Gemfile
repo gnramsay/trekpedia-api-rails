@@ -61,3 +61,6 @@ gem 'brakeman', '~> 5.2', groups: %i[development test]
 gem 'bundle-audit', '~> 0.1.0', group: %i[development test]
 
 gem 'colorize', '~> 0.8.1'
+
+# required to fix RSpec in Ruby 3.1
+gem 'net-smtp', require: false, groups: :test

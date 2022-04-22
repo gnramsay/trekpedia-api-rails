@@ -52,6 +52,7 @@ gem 'rspec-rails', '~> 5.1', groups: %i[development test]
 gem 'solargraph', '~> 0.44.3', groups: %i[development test]
 
 gem 'spring-commands-rspec', group: :development
+gem 'spring-commands-rubocop', git: 'https://github.com/seapagan/spring-commands-rubocop', group: :development
 
 gem 'simplecov', '~> 0.21.2', group: :test
 gem 'simplecov-lcov', group: :test

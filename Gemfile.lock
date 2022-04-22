@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/seapagan/spring-commands-rubocop
+  revision: d48033434734b4961ebc753d60fbd92c5d071073
+  specs:
+    spring-commands-rubocop (0.4.0)
+      spring (>= 1.0, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -263,6 +270,7 @@ DEPENDENCIES
   solargraph (~> 0.44.3)
   spring
   spring-commands-rspec
+  spring-commands-rubocop!
   tzinfo-data
 
 RUBY VERSION

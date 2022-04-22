@@ -1,6 +1,7 @@
 require:
   - rubocop-performance
   - rubocop-rspec
+  - rubocop-rails
 
 AllCops:
   TargetRubyVersion: 2.7.6
@@ -26,6 +27,15 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Enabled: false
 
+# Rails Rule configuration
+Rails/FilePath:
+  EnforcedStyle: arguments
+
+Rails/Output:
+  Exclude:
+    - db/seeds.rb
+
+# RSpec Rule configuration
 RSpec/MultipleExpectations:
   Max: 3
 

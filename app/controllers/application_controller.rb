@@ -10,6 +10,6 @@ class ApplicationController < ActionController::API
       title: 'Record not Found',
       detail: 'That record does not exist in the database'
     }
-    render json: { errors: [error] }, status: 404
+    render json: { errors: [error] }, status: :not_found
   end
 end

@@ -17,10 +17,14 @@ Full documentation incoming once the basic functionality is complete.
 ## Ruby and Rails versions
 
 This API is being developed using Ruby `2.7.6` and Rails `6.1.5` which were the
-latest releases of their Major verisons at develpoment time.
+latest releases of their Major verisons at development time.
 
-Ruby 3 is out but I don't currently test against this version, it may work but
-YMMV. I **do** intend to add version 3 to the CI tests though.
+The CI tests however, **ARE** run against the following matrix of Ruby versions
+:
+
+```ruby
+[ 2.7, 3.0, 3.1 ]
+```
 
 I have no plans to migrate to Rails 7 at this time
 

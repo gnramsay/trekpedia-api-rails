@@ -9,6 +9,11 @@ on:
   #  branches: [main]
 jobs:
   rspec:
+    strategy:
+      fail-fast: false
+      matrix:
+        # Due to https://github.com/actions/runner/issues/849, we have to use quotes for '3.0'
+        ruby: [2.7, "3.0", 3.1]
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -29,7 +34,7 @@ jobs:
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
       # Add or replace database setup steps here
       - name: Set up database schema

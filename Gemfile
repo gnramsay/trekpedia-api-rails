@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.6'
+# ruby '2.7.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.5'
@@ -41,7 +41,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'rubocop', '~> 1.28', groups: %i[development test]
+gem 'rubocop', '~> 1.28', require: false, groups: %i[development test]
 gem 'rubocop-performance', '~> 1.13', groups: %i[development test]
 gem 'rubocop-rails', '~> 2.14', groups: %i[development test]
 gem 'rubocop-rspec', '~> 2.10', groups: %i[development test]
@@ -61,3 +61,6 @@ gem 'brakeman', '~> 5.2', groups: %i[development test]
 gem 'bundle-audit', '~> 0.1.0', group: %i[development test]
 
 gem 'colorize', '~> 0.8.1'
+
+# required to fix RSpec in Ruby 3.1
+gem 'net-smtp', require: false, groups: :test

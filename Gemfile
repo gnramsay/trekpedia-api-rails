@@ -44,7 +44,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'rubocop', '~> 1.28', require: false, groups: %i[development test]
 gem 'rubocop-performance', '~> 1.13', groups: %i[development test]
 gem 'rubocop-rails', '~> 2.14', groups: %i[development test]
-gem 'rubocop-rspec', '~> 2.10', groups: %i[development test]
+gem 'rubocop-rspec', '~> 2.11', groups: %i[development test]
 
 gem 'factory_bot_rails', '~> 6.2', groups: %i[development test]
 gem 'rspec-rails', '~> 5.1', groups: %i[development test]

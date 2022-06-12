@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # ruby '2.7.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.5'
+gem 'rails', '~> 6.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -22,7 +22,7 @@ gem 'puma', '~> 5.0'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', '>= 1.12.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -41,15 +41,15 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'rubocop', '~> 1.28', require: false, groups: %i[development test]
-gem 'rubocop-performance', '~> 1.13', groups: %i[development test]
+gem 'rubocop', '~> 1.30.1', require: false, groups: %i[development test]
+gem 'rubocop-performance', '~> 1.14.2', groups: %i[development test]
 gem 'rubocop-rails', '~> 2.14', groups: %i[development test]
-gem 'rubocop-rspec', '~> 2.10', groups: %i[development test]
+gem 'rubocop-rspec', '~> 2.11.1', groups: %i[development test]
 
 gem 'factory_bot_rails', '~> 6.2', groups: %i[development test]
-gem 'rspec-rails', '~> 5.1', groups: %i[development test]
+gem 'rspec-rails', '~> 5.1.2', groups: %i[development test]
 
-gem 'solargraph', '~> 0.44.3', groups: %i[development test]
+gem 'solargraph', '~> 0.45.0', groups: %i[development test]
 
 gem 'spring-commands-rspec', group: :development
 gem 'spring-commands-rubocop', git: 'https://github.com/seapagan/spring-commands-rubocop', group: :development

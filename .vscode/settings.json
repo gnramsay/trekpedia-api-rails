@@ -17,7 +17,7 @@
   "ruby.useBundler": true,
   "ruby.useLanguageServer": true,
 
-  "rubyTestExplorer.testFramework": "none",
+  "rubyTestExplorer.testFramework": "rspec",
   // "rubyTestExplorer.minitestDirectory": "./spec/",
   // "rubyTestExplorer.logpanel": true,
   "rubyTestExplorer.rspecCommand": "spring rspec",

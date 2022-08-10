@@ -57,7 +57,7 @@ gem 'spring-commands-rubocop', git: 'https://github.com/seapagan/spring-commands
 gem 'simplecov', '~> 0.21.2', group: :test
 gem 'simplecov-lcov', group: :test
 
-gem 'brakeman', '~> 5.2', groups: %i[development test]
+gem 'brakeman', '~> 5.3', groups: %i[development test]
 gem 'bundle-audit', '~> 0.1.0', group: %i[development test]
 
 gem 'colorize', '~> 0.8.1'

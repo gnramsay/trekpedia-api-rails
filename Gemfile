@@ -49,7 +49,7 @@ gem 'rubocop-rspec', '~> 2.11.1', groups: %i[development test]
 gem 'factory_bot_rails', '~> 6.2', groups: %i[development test]
 gem 'rspec-rails', '~> 5.1.2', groups: %i[development test]
 
-gem 'solargraph', '~> 0.45.0', groups: %i[development test]
+gem 'solargraph', '~> 0.46.0', groups: %i[development test]
 
 gem 'spring-commands-rspec', group: :development
 gem 'spring-commands-rubocop', git: 'https://github.com/seapagan/spring-commands-rubocop', group: :development

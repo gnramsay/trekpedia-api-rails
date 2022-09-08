@@ -36,6 +36,9 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
+      # update to latest rubygems
+      - name: Update to latest rubygems
+      - run: gem update --system
       # Add or replace database setup steps here
       - name: Set up database schema
         run: bundle exec rails db:schema:load

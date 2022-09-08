@@ -64,3 +64,6 @@ gem 'colorize', '~> 0.8.1'
 
 # required to fix RSpec in Ruby 3.1
 gem 'net-smtp', require: false, groups: :test
+
+# fix annoying "already initialized constant errors" messages in console
+gem 'net-http'

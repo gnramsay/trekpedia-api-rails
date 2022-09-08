@@ -44,6 +44,12 @@ and so requires the extra flag :
 git clone --recurse-submodules https://github.com/gnramsay/trekpedia-api-rails.git
 ```
 
+Run bundler to install the dependencies.
+
+```bash
+bundle
+```
+
 ## Database creation and initialization
 
 Run `rails db:setup` to initialize the database, load the schema, and import the

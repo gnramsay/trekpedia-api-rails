@@ -47,7 +47,7 @@ end
 
 puts "\nPopulating Trekpedia data base from local JSON files".light_blue
 
-series_list = JSON.parse(File.read(Rails.root.join('trekdata', 'output', 'star_trek_series_info.json')))
+series_list = JSON.parse(Rails.root.join('trekdata', 'output', 'star_trek_series_info.json').read)
 
 puts "\nClearing out existing data from the database.".red
 Series.destroy_all
@@ -66,7 +66,7 @@ series_list.each do |series|
   puts "  -> Reading Seasons data from '#{series_datafile}'".light_blue
 
   begin
-    series_data = JSON.parse(File.read(Rails.root.join('trekdata', 'output', series_datafile)))
+    series_data = JSON.parse(Rails.root.join('trekdata', 'output', series_datafile).read)
   rescue Errno::ENOENT
     puts '     ❌ File not found, ignoring.'.red
   else

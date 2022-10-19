@@ -47,7 +47,7 @@ gem 'rubocop-rails', '~> 2.16', groups: %i[development test]
 gem 'rubocop-rspec', '~> 2.13.1', groups: %i[development test]
 
 gem 'factory_bot_rails', '~> 6.2', groups: %i[development test]
-gem 'rspec-rails', '~> 5.1.2', groups: %i[development test]
+gem 'rspec-rails', '~> 6.0.1', groups: %i[development test]
 
 gem 'solargraph', '~> 0.46.0', groups: %i[development test]
 
